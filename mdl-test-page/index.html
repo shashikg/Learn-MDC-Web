@@ -9,57 +9,29 @@
 	</head>
 	<body>
 		
-	  <button id="show-dialog1" type="button" class="mdl-button">Show Dialog1</button>
-	  <button id="show-dialog2" type="button" class="mdl-button">Show Dialog2</button>
-	  <dialog id="dialog1 " class="mdl-dialog">
-	    <h4 class="mdl-dialog__title">Allow data collection? from 1 </h4>
+	  <button type="button" class="mdl-button show-modal">Show Modal</button>
+	  <dialog class="mdl-dialog">
 	    <div class="mdl-dialog__content">
 	      <p>
-	        Allowing us to collect data will let us get you the information you want faster.
+	        Allow this site to collect usage data to improve your experience?
 	      </p>
 	    </div>
-	    <div class="mdl-dialog__actions">
+	    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
 	      <button type="button" class="mdl-button">Agree</button>
 	      <button type="button" class="mdl-button close">Disagree</button>
 	    </div>
 	  </dialog>
-
-	  <dialog id="dialog2" class="mdl-dialog">
-	    <h4 class="mdl-dialog__title">Allow data collection? from 2</h4>
-	    <div class="mdl-dialog__content">
-	      <p>
-	        Allowing us to collect data will let us get you the information you want faster.
-	      </p>
-	    </div>
-	    <div class="mdl-dialog__actions">
-	      <button type="button" class="mdl-button">Agree</button>
-	      <button type="button" class="mdl-button close">Disagree</button>
-	    </div>
-	  </dialog>
-	  <script src="dialog-polyfill.js"></script>
 	  <script>
-	    var dialog1 = document.querySelector('#dialog1');
-	    var dialog2 = document.querySelector('#dialog2');
-	    var showDialog1Button = document.querySelector('#show-dialog1');
-	    var showDialog2Button = document.querySelector('#show-dialog2');
-	    if (! dialog1.showModal) {
-	      dialogPolyfill.registerDialog(dialog1);
+	    var dialog = document.querySelector('dialog');
+	    var showModalButton = document.querySelector('.show-modal');
+	    if (! dialog.showModal) {
+	      dialogPolyfill.registerDialog(dialog);
 	    }
-	    showDialog1Button.addEventListener('click', function() {
-	      dialog1.showModal();
+	    showModalButton.addEventListener('click', function() {
+	      dialog.showModal();
 	    });
-	    dialog1.querySelector('.close').addEventListener('click', function() {
-	      dialog1.close();
-	    });
-
-	    if (! dialog2.showModal) {
-	      dialogPolyfill.registerDialog(dialog2);
-	    }
-	    showDialog2Button.addEventListener('click', function() {
-	      dialog2.showModal();
-	    });
-	    dialog2.querySelector('.close').addEventListener('click', function() {
-	      dialog2.close();
+	    dialog.querySelector('.close').addEventListener('click', function() {
+	      dialog.close();
 	    });
 	  </script>
 
