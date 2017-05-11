@@ -1,0 +1,97 @@
+.mdl-navigation a {
+  color: white;
+}
+
+.hero-container {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 50%;
+}
+
+.hero-container .mdl-grid {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+.hero-container .mdl-grid .mdl-cell {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+  .hero-image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+  }
+
+  .slide {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide1 {
+    background-image: url('1.jpg');
+  }
+  .slide2 {
+    background-image: url('2.jpg');
+  }
+  .slide3 {
+    background-image: url('3.jpg');
+  }
+
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .hero-text button:hover {
+    background-color: #555;
+    color: white;
+  }
+
+  /* Fading animation */
+  .fades {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 8s;
+    animation-name: fade;
+    animation-duration: 8s;
+  }
+
+  @-webkit-keyframes fade {
+    0% {opacity: 0} 
+    60% {opacity: 1}
+    100% {opacity: 0} 
+  }
+
+  @keyframes fade {
+    0% {opacity: 0} 
+    60% {opacity: 1}
+    100% {opacity: 0} 
+  }
+

@@ -9,7 +9,7 @@
 
       .hero-image {
         position: relative;
-        height: 40%;
+        height: 50%;
         
       }
 
@@ -77,15 +77,45 @@
         60% {opacity: 1}
         100% {opacity: 0} 
       }
+
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+      }
+
+      .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+      }
+
     </style>
   </head>
 
   <body>
-    <div class="hero-image">
-      <div class="slide slide1 fades"></div>
+    <section class="hero-image">
+      <div class="slide slide1 fades">
+        <div class="hero-text">
+          <h1>I am John Doe</h1>
+          <p>And I'm a Photographer</p>
+          <button>Hire me</button>
+        </div>
+      </div>
       <div class="slide slide2 fades"></div>
       <div class="slide slide3 fades"></div>
-    </div>
+    </section>
+
 
     <script>
       var stat=0;
