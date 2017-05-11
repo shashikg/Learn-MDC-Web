@@ -1,130 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body, html {
-    height: 100%;
-    margin: 0;
-}
+  <head>
+    <style>
+      body, html {
+          height: 100%;
+          margin: 0;
+      }
 
-.bkbk {
-  background-color: #000000;
-}
+      .hero-image {
+        position: relative;
+        height: 40%;
+        
+      }
 
-.hero-image {
-  position: relative;
-  height: 40%;
-  
-}
+      .slide {
+        position: absolute;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+      }
 
-.slide {
-  position: absolute;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
+      .slide1 {
+        background-image: url('1.jpg');
+      }
+      .slide2 {
+        background-image: url('2.jpg');
+      }
+      .slide3 {
+        background-image: url('3.jpg');
+      }
 
-.slide1 {
-  background-image: url('1.jpg');
-}
-.slide2 {
-  background-image: url('2.jpg');
-}
-.slide3 {
-  background-image: url('3.jpg');
-}
+      .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
 
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
+      .hero-text button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 10px 25px;
+        color: black;
+        background-color: #ddd;
+        text-align: center;
+        cursor: pointer;
+      }
 
-.hero-text button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
-  text-align: center;
-  cursor: pointer;
-}
+      .hero-text button:hover {
+        background-color: #555;
+        color: white;
+      }
 
-.hero-text button:hover {
-  background-color: #555;
-  color: white;
-}
+      /* Fading animation */
+      .fades {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 8s;
+        animation-name: fade;
+        animation-duration: 8s;
+      }
 
-/* Fading animation */
-.fades {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 8s;
-  animation-name: fade;
-  animation-duration: 8s;
-}
+      @-webkit-keyframes fade {
+        0% {opacity: 0} 
+        60% {opacity: 1}
+        100% {opacity: 0} 
+      }
 
-@-webkit-keyframes fade {
-  0% {opacity: 0} 
-  60% {opacity: 1}
-  100% {opacity: 0} 
-}
+      @keyframes fade {
+        0% {opacity: 0} 
+        60% {opacity: 1}
+        100% {opacity: 0} 
+      }
+    </style>
+  </head>
 
-@keyframes fade {
-  0% {opacity: 0} 
-  60% {opacity: 1}
-  100% {opacity: 0} 
-}
+  <body>
+    <div class="hero-image">
+      <div class="slide slide1 fades"></div>
+      <div class="slide slide2 fades"></div>
+      <div class="slide slide3 fades"></div>
+    </div>
 
+    <script>
+      var stat=0;
+      var pstat=2;
+      var ppstat=1;
+      var slide = document.getElementsByClassName("slide");
 
-</style>
-</head>
-<body>
+      slide[ppstat].style.display = "none";
+      slide[pstat].style.display = "block";
+      slide[stat].style.display = "block";
+      ppstat=pstat;
+      pstat=stat;
+      stat++;
+      stat=(stat%slide.length);
+      
+      change();
 
-<div class="hero-image">
-  <div class="slide slide1 fades"></div>
-  <div class="slide slide2 fades"></div>
-  <div class="slide slide3 fades"></div>
-</div>
-<div class="chk"><p>Page Content..</p></div>
-<script>
-  var stat=0;
-  var pstat=2;
-  var ppstat=1;
-  var slide = document.getElementsByClassName("slide");
-
-  slide[ppstat].style.display = "none";
-  slide[pstat].style.display = "block";
-  slide[stat].style.display = "block";
-  ppstat=pstat;
-  pstat=stat;
-  stat++;
-  stat=(stat%slide.length);
-  
-  change();
-  function change(){
-    slide[ppstat].style.display = "none";
-    slide[stat].style.display = "block";
-    ppstat=pstat;
-    pstat=stat;
-    stat++;
-    stat=(stat%slide.length);
-    setTimeout(change, 4000);
-  }
-</script>
-
-<p>Page Content..</p>
-<br>
-<br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<p>Page Content..</p>
-
-
-</body>
+      function change(){
+        slide[ppstat].style.display = "none";
+        slide[stat].style.display = "block";
+        ppstat=pstat;
+        pstat=stat;
+        stat++;
+        stat=(stat%slide.length);
+        setTimeout(change, 4000);
+      }
+    </script>
+  </body>
 </html>
