@@ -49,6 +49,12 @@
   .slide3 {
     background-image: url('3.jpg');
   }
+  .slide4 {
+    background-image: url('4.png');
+  }
+  .slide5 {
+    background-image: url('5.png');
+  }
 
   .hero-text {
     text-align: center;
