@@ -9,11 +9,50 @@
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	</head>
 	<body>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId            : '1939855306245506',
+	      autoLogAppEvents : true,
+	      xfbml            : true,
+	      version          : 'v2.9'
+	    });
+	    FB.AppEvents.logPageView();
+	    FB.api(
+		    "/shashikg.iitk.p/feed",
+		    function (response) {
+		      if (response && !response.error) {
+		        /* handle the result */
+		      }else{
+		      	alert('damm')
+		      }
+		    }
+		);
+	  };
+	  	
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
 	
-	<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">CS 6 (8 on tablet)</div>
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">CS 6 (8 on tablet)</div>
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--hide-tablet">CS 6 (8 on tablet)</div>
-</div>
+	<script>
+	// Only works after `FB.init` is called
+	// FB.api(
+	//     "/me/feed",
+	//     function (response) {
+	//       if (response && !response.error) {
+	//         /* handle the result */
+	//       }
+	//     }
+	// );
+	</script>
+	<button onclick="myFacebookLogin()">Login with Facebook</button>
 	</body>
 </html>
